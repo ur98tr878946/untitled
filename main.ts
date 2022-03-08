@@ -1,5 +1,8 @@
-let funk = 0
-let mone = 0
+input.onButtonPressed(Button.A, function () {
+    basic.showNumber(20)
+    basic.showIcon(IconNames.Yes)
+    basic.showString("burger meal")
+})
 input.onButtonPressed(Button.AB, function () {
     basic.clearScreen()
     led.enable(true)
@@ -28,13 +31,18 @@ input.onButtonPressed(Button.AB, function () {
         basic.showNumber(funk)
     }
 })
+input.onButtonPressed(Button.B, function () {
+    basic.showNumber(10)
+    basic.showIcon(IconNames.Yes)
+    basic.showString("burger")
+})
 input.onLogoEvent(TouchButtonEvent.Touched, function () {
     let funk2 = 0
     led.enable(true)
     basic.clearScreen()
     if (mone > 0) {
         basic.showIcon(IconNames.Yes)
-        mone += -5.99
+        mone += coin
     } else if (funk2 == 20) {
         basic.showString("hacking in progress ")
         music.playMelody("C C5 C C5 C C5 C C5 ", 120)
@@ -228,6 +236,12 @@ input.onLogoEvent(TouchButtonEvent.Touched, function () {
     }
     basic.showNumber(mone)
 })
+let funk = 0
+let mone = 0
+let coin = 0
+coin = 0
+mone = 100
+funk = 0
 loops.everyInterval(60000, function () {
     if (true) {
         basic.showString("sleep mode")
