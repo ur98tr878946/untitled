@@ -1,7 +1,9 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(20)
+    led.enable(true)
+    basic.showNumber(200)
     basic.showIcon(IconNames.Yes)
-    basic.showString("burger meal")
+    basic.showString("full menu added")
+    coin += 200
 })
 input.onButtonPressed(Button.AB, function () {
     basic.clearScreen()
@@ -32,9 +34,11 @@ input.onButtonPressed(Button.AB, function () {
     }
 })
 input.onButtonPressed(Button.B, function () {
+    led.enable(true)
     basic.showNumber(10)
     basic.showIcon(IconNames.Yes)
     basic.showString("burger")
+    coin += 10
 })
 input.onLogoEvent(TouchButtonEvent.Touched, function () {
     let funk2 = 0
@@ -43,6 +47,7 @@ input.onLogoEvent(TouchButtonEvent.Touched, function () {
     if (mone > 0) {
         basic.showIcon(IconNames.Yes)
         mone += coin
+        coin = 0
     } else if (funk2 == 20) {
         basic.showString("hacking in progress ")
         music.playMelody("C C5 C C5 C C5 C C5 ", 120)
@@ -189,7 +194,7 @@ input.onLogoEvent(TouchButtonEvent.Touched, function () {
             `)
         mone = 10000000
         music.startMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once)
-        for (let index = 0; index < 1000000000000000; index++) {
+        for (let index = 0; index < 10; index++) {
             basic.showString("hacked")
         }
     } else {
