@@ -1,9 +1,9 @@
 input.onButtonPressed(Button.A, function () {
     led.enable(true)
-    basic.showNumber(200)
+    basic.showNumber(50)
     basic.showIcon(IconNames.Yes)
-    basic.showString("full menu added")
-    coin += 200
+    basic.showString("Diner plus cake and drink")
+    coin += -100
 })
 input.onButtonPressed(Button.AB, function () {
     basic.clearScreen()
@@ -35,10 +35,10 @@ input.onButtonPressed(Button.AB, function () {
 })
 input.onButtonPressed(Button.B, function () {
     led.enable(true)
-    basic.showNumber(10)
+    basic.showNumber(20)
     basic.showIcon(IconNames.Yes)
-    basic.showString("burger")
-    coin += 10
+    basic.showString("Monthly subscription premium")
+    coin += -50
 })
 input.onLogoEvent(TouchButtonEvent.Touched, function () {
     let funk2 = 0
@@ -247,12 +247,6 @@ let coin = 0
 coin = 0
 mone = 100
 funk = 0
-loops.everyInterval(60000, function () {
-    if (true) {
-        basic.showString("sleep mode")
-        led.enable(false)
-    }
-})
 basic.forever(function () {
     basic.showLeds(`
         . # # # .
@@ -310,4 +304,10 @@ basic.forever(function () {
         . . . . .
         . # . # .
         `)
+})
+loops.everyInterval(120000, function () {
+    if (true) {
+        basic.showString("sleep mode")
+        led.enable(false)
+    }
 })
